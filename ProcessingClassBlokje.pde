@@ -1,4 +1,4 @@
-Blokje b1 = new Blokje(10, 10, 10, 10);
+Blokje b1 = new Blokje(20, 50, 10, 10);
 Blokje b2 = new Blokje(10, 10, 10, 10);
 
 void setup() {
@@ -10,6 +10,8 @@ void setup() {
 }
 
 void draw() {
+  clear();
+  background(204);
   b1.update();
   b2.update();
 }
@@ -38,8 +40,8 @@ class Blokje {
     if(keyPressed == true && key == CODED && (keyCode == UP || keyCode == RIGHT || keyCode == DOWN || keyCode == LEFT)){  
       println("Er is op een pijltjestoets gedrukt!");
     if (mousePressed == true && mouseButton == LEFT) {
-      clear();
-      background(204);
+      //clear();
+      //background(204);
       x--;
       y--;
       rect(x, y, w, h);
@@ -48,8 +50,8 @@ class Blokje {
     } else {
     
     if (mousePressed == true && mouseButton == LEFT) {
-      clear();
-      background(204);
+      //clear();
+      //background(204);
       x++;
       y++;
       rect(x, y, w, h);
@@ -57,16 +59,16 @@ class Blokje {
    }          
 
     if (mousePressed == true && mouseButton == RIGHT) {
-      clear();
-      background(204);
+      //clear();
+      //background(204);
       w++;
       h++;
       rect(x, y, w, h);
     }
 
     if (keyPressed == true && key == 'r') {
-      clear();
-      background(204);       
+      //clear();
+      //background(204);       
       w = previousw;
       h = previoush;
       rect(x, y, w, h);
