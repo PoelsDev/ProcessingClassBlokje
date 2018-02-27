@@ -4,7 +4,7 @@ Blokje b2 = new Blokje(10, 10, 10, 10);
 void setup() {
   size(200, 200);
   background(204);
-  stroke(255, 0, 0);
+  stroke(255, 0, 255);
   fill(255, 0, 0);
   frameRate(25);
 }
@@ -12,6 +12,7 @@ void setup() {
 void draw() {    
   
   background(204);
+  
   b1.draw();
   b2.draw();
   
@@ -53,6 +54,23 @@ void draw() {
   b1.reset();
   b2.reset();
   }
+  
+  if(keyPressed == true && key == 'c'){
+  stroke(random(0,255),random(0,255),random(0,255));
+  fill(random(0,255),random(0,255),random(0,255));
+  }
+  
+  if(keyPressed == true && key == 's'){
+  println("Speed +1");
+  b1.speedUp();
+  b2.speedUp();
+  }
+  
+  if(keyPressed == true && key == 'd'){
+  println("Speed -1");
+  b1.speedDown();
+  b2.speedDown();
+  }
 }
 
 
@@ -61,26 +79,30 @@ class Blokje {
   int y;
   int w;
   int h;
+  
   int previousw;
   int previoush;
+  
   int xRichting = 1;
   int yRichting = 1;
+  
+  int speed = 1; 
 
-  Blokje(int X, int Y, int W, int H) {
-    x = X;
-    y = Y;    
-    w = W;
-    h = H;
-    previousw = W;
-    previoush = H;    
+  Blokje(int x, int y, int w, int h) {
+    this.x = x;
+    this.y = y;    
+    this.w = w;
+    this.h = h;
+    previousw = this.w;
+    previoush = this.h;    
   }
   
   void draw(){
     rect(x,y,w,h);
   }
   void update(){  
-      x += xRichting;
-      y += yRichting;    
+      x += xRichting * speed;
+      y += yRichting * speed;    
   }
   
   void grow(){
@@ -111,6 +133,14 @@ class Blokje {
   void goLeft(){
     xRichting = -1;
     yRichting = 0;
+  }  
+  
+  void speedUp(){
+  speed++;  
+  }
+  
+  void speedDown(){
+  speed--;
   }
 
  /* void update() {
