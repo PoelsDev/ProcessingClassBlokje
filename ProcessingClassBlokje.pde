@@ -21,6 +21,31 @@ void draw() {
   b2.update();
   }
   
+  if(keyPressed == true && key == CODED){
+  switch(keyCode){
+    case UP:
+    println("Richting is nu UP");   
+    b1.goUp();
+    b2.goUp();
+    break;
+    case DOWN:
+    println("Richting is nu DOWN");
+    b1.goDown();
+    b2.goDown();
+    break;
+    case LEFT:
+    println("Richting is nu LEFT");
+    b1.goLeft();
+    b2.goLeft();
+    break;
+    case RIGHT:
+    println("Richting is nu RIGHT");
+    b1.goRight();
+    b2.goRight();
+    break;
+  }
+  }
+  /*
   if(keyPressed == true && key == CODED && keyCode == UP){
   println("Richting is nu UP");   
   b1.goUp();
@@ -44,11 +69,12 @@ void draw() {
   b1.goLeft();
   b2.goLeft();
   }
-  
+  */
   if(mousePressed == true && mouseButton == RIGHT){
   b1.grow();
   b2.grow();
   }
+  
   
   if(keyPressed == true && key == 'r'){
   b1.reset();
