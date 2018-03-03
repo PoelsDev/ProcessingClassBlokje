@@ -12,4 +12,6 @@ We gaan nu stap voor stap (telkens in een commit) code schrijven dit het volgend
 - [x] M.b.v. de rechtermuisknop zullen de blokjes per FPS 1 pixel groter worden (zowel in de breedte als de hoogte).
 - [x] M.b.v. de pijltjestoetsen moeten we de richting kunnen veranderen. Telkens op een pijltjestoets wordt gedrukt, wordt dit gelogd op de console. Als dan op de linkermuisknop wordt gedrukt, bewegen de blokjes in de ingestelde richting.
 - [x] Met de `r`-toets kunnen we de grootte van elk blokje resetten naar de beginwaarde die meegegeven werd met de constructor. (Het is dus nodig om deze beginwaarden apart bij te houden.)
-- [ ] ...
+- [x] Met de 'c'-toets kan je de kleur van de blokjes veranderen naar een andere random kleur.
+- [x] Met de 's'-toets kan je de snelheid waaraan de blokjes bewegen verhogen.
+- [x] Met de 'd'-toets kan je de snelheid waaraan de blokjes bewegen verlagen.
